@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "adda91c6-1198-470c-825b-dec90a0151a2",
+		"name": "MERN-Les-Bons-Artisans",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24273422"
+	},
+	"item": [
+		{
+			"name": "Products List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/products",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Produit Information",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"IphoneXr\",\r\n    \"type\" : \"phone\",\r\n    \"price\" : 10,\r\n    \"rating\" : 5,\r\n    \"warranty_years\" : 3,\r\n    \"available\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/products/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6387cc4cd5ea3d9b7cfa6fea"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"IphoneXr\",\r\n    \"type\" : \"phone\",\r\n    \"price\" : 10,\r\n    \"rating\" : 5,\r\n    \"warranty_years\" : 3,\r\n    \"available\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/products/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Samsung\",\r\n    \"type\" : \"phone\",\r\n    \"price\" : 20,\r\n    \"rating\" : 5,\r\n    \"warranty_years\" : 3,\r\n    \"available\" : false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/products/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6387cc4cd5ea3d9b7cfa6fea"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/products/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6387cc4cd5ea3d9b7cfa6fea"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
