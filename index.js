@@ -13,6 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/api/products", productRoutes);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Port d'écoute: ${process.env.PORT}`);
+app.listen(4000, () => {
+  console.log(`Port d'écoute: 4000`);
 });
