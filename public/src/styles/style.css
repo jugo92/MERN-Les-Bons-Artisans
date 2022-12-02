@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background: #deeaee;
+    margin: 0;
+}
+
+.nav{
+    background-color: #5EB7BF;
+    color: white;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.nav ul{
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav a{
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.nav a:hover{
+    color : #1b2150
+}
+.productContainer{
+    border-radius: 7px;
+    margin-top: 15px;
+    background-color: #1b2150;
+    width : 15%;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productForm{
+    border-radius: 7px;
+    margin-top: 15px;
+    padding: 30px;
+    background-color: #1b2150;
+    width : 15%;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top : 15%
+}
+
+.p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.white{
+    color : white
+}
+
+.green{
+    color : #4CAF50;
+}
+
+.red{
+    color : #f44336;
+}
+
+.button{
+    padding: 5px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    color : white;
+    margin-left : 5px;
+}
+
+.update{
+    background-color: #008CBA; 
+}
+
+.update:hover{
+    background-color: white; 
+    color : #008CBA; 
+}
+.delete{
+    background-color : #f44336;
+}
+
+.delete:hover{
+    color : #f44336;
+    background-color: white;
+}
+
+.container-product{
+    display: flex;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.formUpdate{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    padding: 15px;
+    margin: 10px 0;
+}
+
+span{
+    padding: 15px;
+    margin : 10px 0;
+    color : white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+label{
+    color: white;
+}
+
+.err{
+    color: #DC143C;
+}

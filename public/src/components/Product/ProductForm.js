@@ -11,7 +11,7 @@ const ProductForm = () => {
 
   const handleProduct = e => {
     e.preventDefault();
-
+    const error = document.querySelector(".err");
     axios({
       method: "post",
       url: "http://localhost:4000/api/products/create",
@@ -24,89 +24,102 @@ const ProductForm = () => {
         available,
       },
     })
-      .then(res => {
-        if (res.data.errors) {
-        } else {
-          window.location("/");
-        }
+      .then(_ => {
+        window.location = "/";
       })
       .catch(err => {
-        console.log(err);
+        error.innerHTML = err.response.data.err._message;
       });
   };
   return (
-    <form action="" onSubmit={handleProduct}>
-      <label htmlFor="name">Name</label>
-      <br />
-      <input
-        type="text"
-        name="name"
-        id="name"
-        onChange={e => setName(e.target.value)}
-        value={name}
-      />
-      <div className="name error"></div>
-      <br />
-      <label htmlFor="type">Type</label>
-      <br />
-      <input
-        type="text"
-        name="type"
-        id="type"
-        onChange={e => setType(e.target.value)}
-        value={type}
-      />
-      <div className="type error"></div>
-      <br />
-      <label htmlFor="price">Price</label>
-      <br />
-      <input
-        type="text"
-        name="price"
-        id="price"
-        onChange={e => setPrice(e.target.value)}
-        value={price}
-      />
-      <div className="price error"></div>
-      <br />
+    <div className="productForm">
+      <form action="" onSubmit={handleProduct}>
+        <label htmlFor="name">Nom</label>
+        <br />
+        <input
+          type="text"
+          name="name"
+          placeholder="Nom"
+          id="name"
+          onChange={e => setName(e.target.value)}
+          value={name}
+          required
+        />
+        <div className="name error"></div>
+        <br />
+        <label htmlFor="type">Type</label>
+        <br />
+        <input
+          type="text"
+          name="type"
+          placeholder="Type"
+          id="type"
+          onChange={e => setType(e.target.value)}
+          value={type}
+          required
+        />
+        <br />
+        <br />
 
-      <label htmlFor="rating">Rating</label>
-      <br />
-      <input
-        type="text"
-        name="rating"
-        id="rating"
-        onChange={e => setRating(e.target.value)}
-        value={rating}
-      />
-      <div className="rating error"></div>
-      <br />
-      <label htmlFor="warranty_years">Warranty Years</label>
-      <br />
-      <input
-        type="text"
-        name="warranty_years"
-        id="warranty_years"
-        onChange={e => setWarrantyYears(e.target.value)}
-        value={warranty_years}
-      />
-      <div className="warranty_years error"></div>
-      <br />
-      <label htmlFor="available">Available</label>
-      <br />
+        <label htmlFor="price">Prix</label>
+        <br />
+        <input
+          type="text"
+          name="price"
+          id="price"
+          onChange={e => setPrice(e.target.value)}
+          value={price}
+          placeholder="prix"
+          required
+        />
+        <br />
+        <br />
 
-      <input
-        type="text"
-        name="available"
-        id="available"
-        onChange={e => setAvailable(e.target.value)}
-        value={available}
-      />
-      <div className="available error"></div>
-      <br />
+        <label htmlFor="rating">Note</label>
+        <br />
+        <input
+          type="text"
+          name="rating"
+          id="rating"
+          onChange={e => setRating(e.target.value)}
+          value={rating}
+          placeholder="Note"
+          required
+        />
+        <br />
+        <br />
+        <label htmlFor="warranty_years">Garantie</label>
+        <br />
+        <input
+          type="text"
+          name="warranty_years"
+          id="warranty_years"
+          onChange={e => setWarrantyYears(e.target.value)}
+          value={warranty_years}
+          placeholder="Garantie"
+          required
+        />
+        <br />
+        <br />
+        <label htmlFor="available">Disponibilité</label>
+        <br />
 
-      <input type="submit" value="Créer" />
-    </form>
+        <input
+          type="text"
+          name="available"
+          id="available"
+          onChange={e => setAvailable(e.target.value)}
+          value={available}
+          placeholder="Disponibilité (boolean)"
+          required
+        />
+        <br />
+        <br />
+        <div className="err"></div>
+
+        <input type="submit" value="Créer" />
+      </form>
+    </div>
   );
 };
 

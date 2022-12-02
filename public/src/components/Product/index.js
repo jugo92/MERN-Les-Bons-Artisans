@@ -1,10 +1,12 @@
 import React from "react";
 import ProductForm from "./ProductForm";
+import NavBar from "../NavBar";
 
 const CreateProduct = () => {
   return (
     <div>
-      Créer votre article :<ProductForm></ProductForm>
+      <NavBar />
+      <ProductForm />
     </div>
   );
 };

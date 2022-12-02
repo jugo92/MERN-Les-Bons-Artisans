@@ -20,9 +20,9 @@ module.exports.createProduct = async (req, res) => {
       warranty_years,
       available,
     });
-    res.status(201).json({ product: product._id });
+    return res.status(201).json({ product: product._id });
   } catch (err) {
-    res.status(400).send({ err });
+    return res.status(400).send({ err });
   }
 };
 
@@ -58,7 +58,7 @@ module.exports.updateProduct = async (req, res) => {
       }
     );
   } catch (err) {
-    return res.status(500).json({ message: err });
+    return res.status(400).json({ message: err });
   }
 };
 

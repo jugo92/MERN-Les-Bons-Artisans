@@ -1,7 +1,11 @@
 import React from "react";
-
+import HomeList from "../components/Home/HomeList";
 const Home = () => {
-  return <div>Hello depuis home</div>;
+  return (
+    <div>
+      <HomeList />
+    </div>
+  );
 };
 
 export default Home;
