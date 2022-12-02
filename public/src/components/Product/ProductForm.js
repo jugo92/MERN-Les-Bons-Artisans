@@ -69,7 +69,7 @@ const ProductForm = () => {
           id="price"
           onChange={e => setPrice(e.target.value)}
           value={price}
-          placeholder="prix"
+          placeholder="Prix (0-5)"
           required
         />
         <br />
